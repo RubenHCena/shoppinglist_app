@@ -42,7 +42,7 @@
               <div class="row justify-between">
                 <q-icon name="done" />
                   {{ item.name }}
-                <q-icon name="close" @click="deleteItem(item.id) "/>
+                <q-icon class="more" name="close" @click="deleteItem(item.id) "/>
               </div>
             </template>
           </q-slide-item>
@@ -88,3 +88,6 @@
   } 
 
 </script>
+
+<style scoped>
+</style>

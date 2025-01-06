@@ -19,7 +19,7 @@
         <q-route-tab to="/index" label="Index" />
         <q-route-tab to="/ShopList" label="Shoppinglist" />
         <q-route-tab to="/categories" label="Categories" />
-        <q-route-tab to="/login" label="username" class="right"/>
+        <q-route-tab to="/login" label="Login" class="right"/>
       </q-tabs>
     </q-header>
 
