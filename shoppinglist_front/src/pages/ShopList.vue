@@ -19,10 +19,14 @@
 
       <q-select 
         filled
-        v-model="model"
+        v-model="shoppingItem.category_id"
         :options="drops"
-        label="Standard"
+        label="Category"
         color="standard"
+        option-label="name"
+        option-value="id"
+        emit-value
+        map-options
         clearable
         >
         <template v-slot:option="scope">
@@ -51,8 +55,8 @@
           :class="{prioStyle: item.high_prio}"
           >
           <q-slide-item>
-            <q-avatar :icon="drops.name" />
-              {{ item.text }} 
+            <q-avatar :icon="item.category.icon_name" />
+              {{ item.text }}
             <template v-slot:left>
     
               <div class="row justify-between">
@@ -71,38 +75,37 @@
 </template>
   
 <script setup>
-  import { ref, onMounted } from 'vue'
+  import { ref, onMounted, reactive } from 'vue'
   import axios from 'axios';
   //import { useQuasar } from 'quasar'
 
   const drops = ref([])
   const shoppingItems = ref([])
-  
 
  const fetchIcons = async () => {
     const response = await axios.get("https://shoppinglist_db.test/api/categories")
     drops.value = response.data
   }
 
-const shoppingItem = ref({
+const shoppingItem = reactive({
   text: "",
   high_prio: false,
-  category_id: "1",
+  category_id: 1,
 })
 
   const saveItem = async () => {
-  await axios.post("https://shoppinglist_db.test/api/shoppingitems", shoppingItem.value)
-  shoppingItem.value = {
-      text: "",
-      high_prio: false,
-      category_id: "1",
-    }
+  await axios.post("https://shoppinglist_db.test/api/shoppingitems", shoppingItem)
+      shoppingItem.text = ""
+      shoppingItem.high_prio = false
+     shoppingItem.category_id = 1
+    
     await fetchItems()
   }
   
   const fetchItems = async () => {
     const response = await axios.get("https://shoppinglist_db.test/api/shoppingitems")
     shoppingItems.value = response.data
+    
   }
   onMounted(async () => {
     await fetchItems()

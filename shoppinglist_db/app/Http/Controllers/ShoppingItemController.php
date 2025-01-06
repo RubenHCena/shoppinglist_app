@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class shoppingItemController extends Controller
 {
     public function getAll() {
-        $shoppingitems=ShoppingItem::all();
+        $shoppingitems=ShoppingItem::with(['category'])->get();
         return $shoppingitems;
     }
 

@@ -15,8 +15,8 @@ return new class extends Migration
         $table->id();
        // $table->foreignId('user_id')->constrained('users')->nullable();;
         $table->string('text');
-        $table->boolean('high_prio')->nullable();;
-        $table->foreignId('category_id')->constrained('categories')->nullable();;
+        $table->boolean('high_prio');;
+        $table->foreignId('category_id')->constrained('categories');;
         $table->timestamps();
       });
     }
