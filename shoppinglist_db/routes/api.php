@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\shoppingItemController;
-use App\Models\ShoppingItem;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +23,8 @@ Route::get('shoppingitems', [shoppingItemController::class, 'getAll']);
 Route::post('shoppingitems', [shoppingItemController::class, 'store']);
 
 Route::delete('shoppingitems/{id}', [shoppingItemController::class, 'delete']);
+
+//Users
+Route::get('users', [UsersController::class, 'getAll']);
+
+Route::post('shoppingitems', [shoppingItemController::class, 'store']);

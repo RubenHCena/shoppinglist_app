@@ -19,7 +19,8 @@
         <q-route-tab to="/index" label="Index" />
         <q-route-tab to="/ShopList" label="Shoppinglist" />
         <q-route-tab to="/categories" label="Categories" />
-        <q-route-tab to="/login" label="Login" class="right"/>
+        <q-route-tab to="/registerUser" label="register" class="right"/>
+        //TODO fix the saving of registered users
       </q-tabs>
     </q-header>
 
