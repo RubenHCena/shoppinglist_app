@@ -27,4 +27,4 @@ Route::delete('shoppingitems/{id}', [shoppingItemController::class, 'delete']);
 //Users
 Route::get('users', [UsersController::class, 'getAll']);
 
-Route::post('shoppingitems', [shoppingItemController::class, 'store']);
+Route::post('users', [UsersController::class, 'store']);

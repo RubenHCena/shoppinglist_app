@@ -6,7 +6,15 @@ const routes = [
       { path: '/index', component: () => import('pages/IndexPage.vue') },
       { path: '/shopList', component: () => import('pages/ShopList.vue') },
       { path: '/categories', component: () => import('src/pages/CategoriesPage.vue') },
+    ]
+  },
+
+  {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
       { path: '/registerUser', component: () => import('src/pages/RegisterUserPage.vue') },
+      { path: '/loginUser', component: () => import('src/pages/LoginUserPage.vue') },
     ]
   },
 

@@ -20,7 +20,7 @@
         <q-route-tab to="/ShopList" label="Shoppinglist" />
         <q-route-tab to="/categories" label="Categories" />
         <q-route-tab to="/registerUser" label="register" class="right"/>
-        //TODO fix the saving of registered users
+        <q-route-tab to="/loginUser" label="Login" class="right"/> 
       </q-tabs>
     </q-header>
 
